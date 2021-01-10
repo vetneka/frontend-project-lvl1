@@ -1,7 +1,7 @@
-name: lint
+name: eslint
 on: [push]
 jobs:
-  check-bats-version:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
