@@ -9,3 +9,7 @@ brain-games:
 # публикация пакета игры
 publish:
 	npm publish --dry-run
+
+# проверка линтером
+lint:
+	npx eslint .
