@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import gameEngine from '../src/index.js';
 import brainEvenGame from '../src/brain-even-game.js';
+import { EVEN_GAME_RULES } from '../src/consts.js';
 
-brainEvenGame();
+gameEngine(brainEvenGame, EVEN_GAME_RULES);
