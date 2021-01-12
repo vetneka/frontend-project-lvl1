@@ -26,6 +26,9 @@ const CALC_GAME_RULES = 'What is the result of the expression?';
 // GCD_GAME
 const GCD_GAME_RULES = 'Find the greatest common divisor of given numbers.';
 
+// PROGRESSION_GAME
+const PROGRESSION_GAME_RULES = 'What number is missing in the progression?';
+
 export {
   COMMON_GREETING,
   USER_GREETING,
@@ -48,4 +51,6 @@ export {
   CALC_GAME_RULES,
 
   GCD_GAME_RULES,
+
+  PROGRESSION_GAME_RULES,
 };
