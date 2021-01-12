@@ -20,6 +20,9 @@ const EVEN_GAME_FALSE_MESSAGE = 'is wrong answer ;(. Correct answer was';
 const EVEN_GAME_TRUE_END_MESSAGE = 'Congratulations';
 const EVEN_GAME_FALSE_END_MESSAGE = 'Let\'s try again';
 
+// CALC_GAME
+const CALC_GAME_RULES = 'What is the result of the expression?';
+
 export {
   COMMON_GREETING,
   USER_GREETING,
@@ -35,4 +38,6 @@ export {
   EVEN_GAME_FALSE_MESSAGE,
   EVEN_GAME_TRUE_END_MESSAGE,
   EVEN_GAME_FALSE_END_MESSAGE,
+
+  CALC_GAME_RULES,
 };
