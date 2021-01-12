@@ -5,3 +5,4 @@
 
 # Games:
 - ### Brain-even-game | [asciinema for the game](https://asciinema.org/a/383861)
+- ### Brain-calc-game | [asciinema for the game](https://asciinema.org/a/384046)
