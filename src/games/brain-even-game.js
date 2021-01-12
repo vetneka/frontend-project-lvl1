@@ -1,5 +1,5 @@
-import { EVEN_GAME_TRUE_ANSWER, EVEN_GAME_FALSE_ANSWER } from './consts.js';
-import { getRandomIntNumber, isEven } from './utils.js';
+import { EVEN_GAME_TRUE_ANSWER, EVEN_GAME_FALSE_ANSWER } from '../consts.js';
+import { getRandomIntNumber, isEven } from '../utils.js';
 
 const brainEvenGame = () => {
   const [GAME_RANGE_MIN, GAME_RANGE_MAX] = [0, 100];

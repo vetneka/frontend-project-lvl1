@@ -1,4 +1,4 @@
-import { getRandomIntNumber, getRandomArrayValue } from './utils.js';
+import { getRandomIntNumber, getRandomArrayValue } from '../utils.js';
 
 const calcMathExpression = (a, b, operation) => {
   switch (operation) {
