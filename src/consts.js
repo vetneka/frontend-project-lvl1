@@ -23,6 +23,9 @@ const EVEN_GAME_FALSE_ANSWER = 'no';
 // CALC_GAME
 const CALC_GAME_RULES = 'What is the result of the expression?';
 
+// GCD_GAME
+const GCD_GAME_RULES = 'Find the greatest common divisor of given numbers.';
+
 export {
   COMMON_GREETING,
   USER_GREETING,
@@ -43,4 +46,6 @@ export {
   EVEN_GAME_FALSE_ANSWER,
 
   CALC_GAME_RULES,
+
+  GCD_GAME_RULES,
 };
