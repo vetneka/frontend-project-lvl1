@@ -4,7 +4,7 @@ const COMMON_GREETING = 'Welcome to the Brain Games!';
 const USER_GREETING = 'Hello';
 
 const DEFAULT_USER_NAME = 'Noname';
-const USER_NAME_QUESTION_TEXT = 'May I have you name?';
+const USER_NAME_QUESTION_TEXT = 'May I have your name?';
 
 const GAME_QUESTION_TEXT = 'Question';
 const GAME_ANSWER_TEXT = 'You answer';
