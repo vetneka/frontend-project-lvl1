@@ -29,6 +29,11 @@ const GCD_GAME_RULES = 'Find the greatest common divisor of given numbers.';
 // PROGRESSION_GAME
 const PROGRESSION_GAME_RULES = 'What number is missing in the progression?';
 
+// PRIME_GAME
+const PRIME_GAME_TRUE_ANSWER = 'yes';
+const PRIME_GAME_FALSE_ANSWER = 'no';
+const PRIME_GAME_RULES = `Answer "${PRIME_GAME_TRUE_ANSWER}" if given number is prime. Otherwise answer "${PRIME_GAME_FALSE_ANSWER}".`;
+
 export {
   COMMON_GREETING,
   USER_GREETING,
@@ -53,4 +58,8 @@ export {
   GCD_GAME_RULES,
 
   PROGRESSION_GAME_RULES,
+
+  PRIME_GAME_RULES,
+  PRIME_GAME_TRUE_ANSWER,
+  PRIME_GAME_FALSE_ANSWER,
 };
