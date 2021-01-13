@@ -8,32 +8,32 @@ import {
   GAME_TRUE_END_MESSAGE,
   GAME_FALSE_END_MESSAGE,
 } from './consts.js';
-import { print, askUser, greeting } from './cli.js';
+import { askUser, greeting } from './cli.js';
 
 const gameEngine = (game, gameRules) => {
   const END_GAME_CORRECT_ANSWER_COUNT = 3;
 
   const userName = greeting();
 
-  print(gameRules);
+  console.log(gameRules);
 
   for (let i = 0; i < END_GAME_CORRECT_ANSWER_COUNT; i += 1) {
     const [question, answer] = game();
 
-    print(`${GAME_QUESTION_TEXT}:`, question);
+    console.log(`${GAME_QUESTION_TEXT}:`, question);
 
     const expectedAnswer = String(answer);
     const userAnswer = askUser(`${GAME_ANSWER_TEXT}: `);
 
     if (userAnswer !== expectedAnswer) {
-      print(`'${userAnswer}' ${GAME_FALSE_MESSAGE} '${expectedAnswer}'.`);
-      return print(`${GAME_FALSE_END_MESSAGE}, ${userName}!`);
+      console.log(`'${userAnswer}' ${GAME_FALSE_MESSAGE} '${expectedAnswer}'.`);
+      return console.log(`${GAME_FALSE_END_MESSAGE}, ${userName}!`);
     }
 
-    print(GAME_TRUE_MESSAGE);
+    console.log(GAME_TRUE_MESSAGE);
   }
 
-  return print(`${GAME_TRUE_END_MESSAGE}, ${userName}!`);
+  return console.log(`${GAME_TRUE_END_MESSAGE}, ${userName}!`);
 };
 
 export default gameEngine;
