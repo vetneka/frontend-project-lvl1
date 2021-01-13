@@ -8,3 +8,4 @@
 - ### Brain-calc-game | [asciinema for the game](https://asciinema.org/a/384046)
 - ### Brain-gcd-game | [asciinema for the game](https://asciinema.org/a/384077)
 - ### Brain-progression-game | [asciinema for the game](https://asciinema.org/a/384143)
+- ### Brain-prime-game | [asciinema for the game](https://asciinema.org/a/384212)
