@@ -16,9 +16,9 @@ const GAME_TRUE_END_MESSAGE = 'Congratulations';
 const GAME_FALSE_END_MESSAGE = 'Let\'s try again';
 
 // EVEN_GAME
-const EVEN_GAME_RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
 const EVEN_GAME_TRUE_ANSWER = 'yes';
 const EVEN_GAME_FALSE_ANSWER = 'no';
+const EVEN_GAME_RULES = `Answer "${EVEN_GAME_TRUE_ANSWER}" if the number is even, otherwise answer "${EVEN_GAME_FALSE_ANSWER}".`;
 
 // CALC_GAME
 const CALC_GAME_RULES = 'What is the result of the expression?';
