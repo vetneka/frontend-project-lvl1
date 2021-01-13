@@ -20,7 +20,7 @@ const gameEngine = (game, gameRules) => {
   for (let i = 0; i < END_GAME_CORRECT_ANSWER_COUNT; i += 1) {
     const [question, answer] = game();
 
-    print(`${GAME_QUESTION_TEXT}: ${question}`);
+    print(`${GAME_QUESTION_TEXT}:`, question);
 
     const expectedAnswer = String(answer);
     const userAnswer = askUser(`${GAME_ANSWER_TEXT}: `);

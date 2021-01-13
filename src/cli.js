@@ -6,8 +6,8 @@ import {
   DEFAULT_USER_NAME,
 } from './consts.js';
 
-const print = (text) => {
-  console.log(text);
+const print = (...rest) => {
+  console.log(...rest);
 };
 
 const askUser = (question, defaultAnswer) => readlineSync.question(question, {
