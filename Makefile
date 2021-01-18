@@ -13,3 +13,11 @@ publish:
 # проверка линтером
 lint:
 	npx eslint .
+
+# тесты
+test-games:
+	node test/games/brain-calc-game.test.js
+	node test/games/brain-even-game.test.js
+	node test/games/brain-gcd-game.test.js
+	node test/games/brain-prime-game.test.js
+	node test/games/brain-progression-game.test.js
