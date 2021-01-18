@@ -10,7 +10,7 @@ import {
 } from './consts.js';
 import { askUser, greeting } from './cli.js';
 
-const gameEngine = (game, gameRules) => {
+const gameEngine = (game, getGameData, gameRules) => {
   const END_GAME_CORRECT_ANSWER_COUNT = 3;
 
   const userName = greeting();
@@ -18,7 +18,8 @@ const gameEngine = (game, gameRules) => {
   console.log(gameRules);
 
   for (let i = 0; i < END_GAME_CORRECT_ANSWER_COUNT; i += 1) {
-    const [question, answer] = game();
+    const gameData = getGameData();
+    const [question, answer] = game(gameData);
 
     console.log(`${GAME_QUESTION_TEXT}:`, question);
 
