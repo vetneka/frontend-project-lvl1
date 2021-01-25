@@ -2,21 +2,12 @@ import { getRandomIntNumber } from '../utils.js';
 
 const [GAME_RANGE_MIN, GAME_RANGE_MAX] = [0, 10];
 
-const getGCD = (x, y) => {
-  let tempX = x;
-  let tempY = y;
-
-  if (tempX <= 0 || tempY <= 0) return Math.max(tempX, tempY);
-
-  while (tempX !== tempY) {
-    if (tempX > tempY) {
-      tempX -= tempY;
-    } else {
-      tempY -= tempX;
-    }
+const getGCD = (a, b) => {
+  if (b === 0) {
+    return Math.abs(a);
   }
 
-  return tempX;
+  return getGCD(b, (a % b));
 };
 
 const generateGameData = () => {
