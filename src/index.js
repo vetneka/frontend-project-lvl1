@@ -1,4 +1,9 @@
 import {
+  COMMON_GREETING,
+  USER_GREETING,
+  USER_NAME_QUESTION_TEXT,
+  DEFAULT_USER_NAME,
+
   GAME_QUESTION_TEXT,
   GAME_ANSWER_TEXT,
 
@@ -8,12 +13,18 @@ import {
   GAME_TRUE_END_MESSAGE,
   GAME_FALSE_END_MESSAGE,
 } from './consts.js';
-import { askUser, greeting } from './cli.js';
+import { readlineSync } from './cli.js';
 
 const gameEngine = (game, getGameData, gameRules) => {
   const END_GAME_CORRECT_ANSWER_COUNT = 3;
 
-  const userName = greeting();
+  console.log(COMMON_GREETING);
+
+  const userName = readlineSync.question(`${USER_NAME_QUESTION_TEXT} `, {
+    defaultInput: DEFAULT_USER_NAME,
+  });
+
+  console.log(`${USER_GREETING}, ${userName}!`);
 
   console.log(gameRules);
 
@@ -24,7 +35,7 @@ const gameEngine = (game, getGameData, gameRules) => {
     console.log(`${GAME_QUESTION_TEXT}:`, question);
 
     const expectedAnswer = String(answer);
-    const userAnswer = askUser(`${GAME_ANSWER_TEXT}: `);
+    const userAnswer = readlineSync.question(`${GAME_ANSWER_TEXT}: `);
 
     if (userAnswer !== expectedAnswer) {
       console.log(`'${userAnswer}' ${GAME_FALSE_MESSAGE} '${expectedAnswer}'.`);

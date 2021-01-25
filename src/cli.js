@@ -6,19 +6,15 @@ import {
   DEFAULT_USER_NAME,
 } from './consts.js';
 
-const askUser = (question, defaultAnswer) => readlineSync.question(question, {
-  defaultInput: defaultAnswer,
-});
-
 const greeting = () => {
   console.log(COMMON_GREETING);
-  const userName = askUser(`${USER_NAME_QUESTION_TEXT} `, DEFAULT_USER_NAME);
+  const userName = readlineSync.question(`${USER_NAME_QUESTION_TEXT} `, {
+    defaultInput: DEFAULT_USER_NAME,
+  });
   console.log(`${USER_GREETING}, ${userName}!`);
-
-  return userName;
 };
 
 export {
-  askUser,
   greeting,
+  readlineSync,
 };
