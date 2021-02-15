@@ -16,5 +16,4 @@ const greeting = () => {
 
 export {
   greeting,
-  readlineSync,
 };
