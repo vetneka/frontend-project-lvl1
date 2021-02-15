@@ -3,12 +3,12 @@ const getRandomIntNumber = (min = 0, max = 10) => {
   return Math.floor(randomIntNumber);
 };
 
-const getRandomArrayValue = (array) => {
+const getRandomItemFromArray = (array) => {
   const randomIndex = getRandomIntNumber(0, array.length - 1);
   return array[randomIndex];
 };
 
 export {
   getRandomIntNumber,
-  getRandomArrayValue,
+  getRandomItemFromArray,
 };
