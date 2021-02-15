@@ -1,10 +1,7 @@
-import { PRIME_GAME_TRUE_ANSWER, PRIME_GAME_FALSE_ANSWER } from '../consts.js';
 import { getRandomIntNumber } from '../utils.js';
 import playGame from '../index.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const [GAME_RANGE_MIN, GAME_RANGE_MAX] = [0, 10];
 
 const isPrime = (number) => {
   for (let i = 2; i <= Math.sqrt(number); i += 1) {
@@ -16,10 +13,10 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-const generateGameData = () => getRandomIntNumber(GAME_RANGE_MIN, GAME_RANGE_MAX);
+const generateGameData = () => getRandomIntNumber(0, 10);
 
 const createGameTask = (number) => {
-  const expectedAnswer = isPrime(number) ? PRIME_GAME_TRUE_ANSWER : PRIME_GAME_FALSE_ANSWER;
+  const expectedAnswer = isPrime(number) ? 'yes' : 'no';
 
   return [number, expectedAnswer];
 };

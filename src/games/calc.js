@@ -3,8 +3,7 @@ import playGame from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
 
-const [GAME_RANGE_MIN, GAME_RANGE_MAX] = [0, 50];
-const SUPPORTED_MATH_OPERATIONS = ['+', '-', '*'];
+const supportedMathOperations = ['+', '-', '*'];
 
 const calcMathExpression = (a, b, operation) => {
   switch (operation) {
@@ -20,9 +19,9 @@ const calcMathExpression = (a, b, operation) => {
 };
 
 const generateGameData = () => {
-  const firstOperand = getRandomIntNumber(GAME_RANGE_MIN, GAME_RANGE_MAX);
-  const secondOperand = getRandomIntNumber(GAME_RANGE_MIN, GAME_RANGE_MAX);
-  const operation = getRandomItemFromArray(SUPPORTED_MATH_OPERATIONS);
+  const firstOperand = getRandomIntNumber(0, 50);
+  const secondOperand = getRandomIntNumber(0, 50);
+  const operation = getRandomItemFromArray(supportedMathOperations);
 
   return [firstOperand, secondOperand, operation];
 };
