@@ -1,51 +1,43 @@
+import readlineSync from 'readline-sync';
 import {
   COMMON_GREETING,
   USER_GREETING,
-  USER_NAME_QUESTION_TEXT,
+  QUESTION_ABOUT_USER_NAME,
   DEFAULT_USER_NAME,
-
-  GAME_QUESTION_TEXT,
-  GAME_ANSWER_TEXT,
-
-  GAME_TRUE_MESSAGE,
-  GAME_FALSE_MESSAGE,
-
-  GAME_TRUE_END_MESSAGE,
-  GAME_FALSE_END_MESSAGE,
 } from './consts.js';
-import { readlineSync } from './cli.js';
 
-const gameEngine = (game, getGameData, gameRules) => {
-  const END_GAME_CORRECT_ANSWER_COUNT = 3;
+const expectedCorrectAnswersCount = 3;
 
+const playGame = (getGameTask, getGameData, gameDescription) => {
   console.log(COMMON_GREETING);
 
-  const userName = readlineSync.question(`${USER_NAME_QUESTION_TEXT} `, {
+  const userName = readlineSync.question(`${QUESTION_ABOUT_USER_NAME} `, {
     defaultInput: DEFAULT_USER_NAME,
   });
 
   console.log(`${USER_GREETING}, ${userName}!`);
 
-  console.log(gameRules);
+  console.log(gameDescription);
 
-  for (let i = 0; i < END_GAME_CORRECT_ANSWER_COUNT; i += 1) {
+  for (let i = 0; i < expectedCorrectAnswersCount; i += 1) {
     const gameData = getGameData();
-    const [question, answer] = game(gameData);
+    const [question, answer] = getGameTask(gameData);
 
-    console.log(`${GAME_QUESTION_TEXT}:`, question);
+    console.log('Question:', question);
 
     const expectedAnswer = String(answer);
-    const userAnswer = readlineSync.question(`${GAME_ANSWER_TEXT}: `);
+    const userAnswer = readlineSync.question('You answer: ');
 
     if (userAnswer !== expectedAnswer) {
-      console.log(`'${userAnswer}' ${GAME_FALSE_MESSAGE} '${expectedAnswer}'.`);
-      return console.log(`${GAME_FALSE_END_MESSAGE}, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
 
-    console.log(GAME_TRUE_MESSAGE);
+    console.log('Correct!');
   }
 
-  return console.log(`${GAME_TRUE_END_MESSAGE}, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
-export default gameEngine;
+export default playGame;

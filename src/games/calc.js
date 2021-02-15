@@ -1,7 +1,9 @@
-import { getRandomIntNumber, getRandomArrayValue } from '../utils.js';
+import { getRandomIntNumber, getRandomItemFromArray } from '../utils.js';
+import playGame from '../index.js';
 
-const [GAME_RANGE_MIN, GAME_RANGE_MAX] = [0, 50];
-const SUPPORTED_MATH_OPERATIONS = ['+', '-', '*'];
+const gameDescription = 'What is the result of the expression?';
+
+const supportedMathOperations = ['+', '-', '*'];
 
 const calcMathExpression = (a, b, operation) => {
   switch (operation) {
@@ -17,14 +19,14 @@ const calcMathExpression = (a, b, operation) => {
 };
 
 const generateGameData = () => {
-  const firstOperand = getRandomIntNumber(GAME_RANGE_MIN, GAME_RANGE_MAX);
-  const secondOperand = getRandomIntNumber(GAME_RANGE_MIN, GAME_RANGE_MAX);
-  const operation = getRandomArrayValue(SUPPORTED_MATH_OPERATIONS);
+  const firstOperand = getRandomIntNumber(0, 50);
+  const secondOperand = getRandomIntNumber(0, 50);
+  const operation = getRandomItemFromArray(supportedMathOperations);
 
   return [firstOperand, secondOperand, operation];
 };
 
-const brainCalcGame = (data) => {
+const createGameTask = (data) => {
   const [firstOperand, secondOperand, operation] = data;
 
   const question = `${firstOperand} ${operation} ${secondOperand}`;
@@ -33,7 +35,4 @@ const brainCalcGame = (data) => {
   return [question, expectedAnswer];
 };
 
-export {
-  generateGameData,
-  brainCalcGame as default,
-};
+export default () => playGame(createGameTask, generateGameData, gameDescription);
