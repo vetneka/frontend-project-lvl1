@@ -1,3 +1,4 @@
+import readlineSync from 'readline-sync';
 import {
   COMMON_GREETING,
   USER_GREETING,
@@ -13,9 +14,9 @@ import {
   GAME_TRUE_END_MESSAGE,
   GAME_FALSE_END_MESSAGE,
 } from './consts.js';
-import { readlineSync } from './cli.js';
 
-const gameEngine = (game, getGameData, gameRules) => {
+const playGame = (getGameTask, getGameData, gameDescription) => {
+  debugger;
   const END_GAME_CORRECT_ANSWER_COUNT = 3;
 
   console.log(COMMON_GREETING);
@@ -26,11 +27,11 @@ const gameEngine = (game, getGameData, gameRules) => {
 
   console.log(`${USER_GREETING}, ${userName}!`);
 
-  console.log(gameRules);
+  console.log(gameDescription);
 
   for (let i = 0; i < END_GAME_CORRECT_ANSWER_COUNT; i += 1) {
     const gameData = getGameData();
-    const [question, answer] = game(gameData);
+    const [question, answer] = getGameTask(gameData);
 
     console.log(`${GAME_QUESTION_TEXT}:`, question);
 
@@ -39,7 +40,8 @@ const gameEngine = (game, getGameData, gameRules) => {
 
     if (userAnswer !== expectedAnswer) {
       console.log(`'${userAnswer}' ${GAME_FALSE_MESSAGE} '${expectedAnswer}'.`);
-      return console.log(`${GAME_FALSE_END_MESSAGE}, ${userName}!`);
+      console.log(`${GAME_FALSE_END_MESSAGE}, ${userName}!`);
+      return; 
     }
 
     console.log(GAME_TRUE_MESSAGE);
@@ -48,4 +50,4 @@ const gameEngine = (game, getGameData, gameRules) => {
   return console.log(`${GAME_TRUE_END_MESSAGE}, ${userName}!`);
 };
 
-export default gameEngine;
+export default playGame;

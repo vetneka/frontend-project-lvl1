@@ -1,5 +1,8 @@
 import { PRIME_GAME_TRUE_ANSWER, PRIME_GAME_FALSE_ANSWER } from '../consts.js';
 import { getRandomIntNumber } from '../utils.js';
+import playGame from '../index.js';
+
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const [GAME_RANGE_MIN, GAME_RANGE_MAX] = [0, 10];
 
@@ -15,15 +18,10 @@ const isPrime = (number) => {
 
 const generateGameData = () => getRandomIntNumber(GAME_RANGE_MIN, GAME_RANGE_MAX);
 
-const brainProgressionGame = (data) => {
-  const randomNumber = data;
-  const question = randomNumber;
-  const expectedAnswer = isPrime(randomNumber) ? PRIME_GAME_TRUE_ANSWER : PRIME_GAME_FALSE_ANSWER;
+const createGameTask = (number) => {
+  const expectedAnswer = isPrime(number) ? PRIME_GAME_TRUE_ANSWER : PRIME_GAME_FALSE_ANSWER;
 
-  return [question, expectedAnswer];
+  return [number, expectedAnswer];
 };
 
-export {
-  generateGameData,
-  brainProgressionGame as default,
-};
+export default () => playGame(createGameTask, generateGameData, gameDescription);
